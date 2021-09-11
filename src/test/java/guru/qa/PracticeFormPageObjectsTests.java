@@ -4,6 +4,7 @@ import com.codeborne.selenide.Configuration;
 import com.github.javafaker.Faker;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import pages.RegistrationPage;
 
 
@@ -30,6 +31,12 @@ public class PracticeFormPageObjectsTests {
     static void setup() {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.startMaximized = true;
+
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("enableVNC", true);
+
+        Configuration.browserCapabilities = capabilities;
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
     }
 
     @Test

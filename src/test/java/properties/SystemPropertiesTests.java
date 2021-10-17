@@ -40,5 +40,19 @@ public class SystemPropertiesTests {
         //  gradle clean properties_tests -Dbrowser=safari -Dversion=89
     }
 
+    @Test
+    void setPropertyTest() {
+
+        System.out.println(System.getProperty("browser"));
+        System.setProperty("browser", "firefox");
+
+        System.out.println(System.getProperty("browser"));
+
+
+        //  gradle clean properties_tests
+        //  gradle clean properties_tests -Dbrowser=safari
+        //  gradle clean properties_tests -Dbrowser=safari -Dversion=89
+    }
+
 }
 
